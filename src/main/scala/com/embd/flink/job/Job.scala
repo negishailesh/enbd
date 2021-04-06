@@ -3,6 +3,7 @@ package com.embd.flink.job
 import java.util.{Optional, Properties}
 import java.util.concurrent.TimeUnit
 
+import com.embd.flink.flow.StreamJoinFlow
 import com.embd.flink.source.KafkaJsonSource
 import com.embd.flink.utils.ConfigHelper
 import com.fasterxml.jackson.databind.node.ObjectNode
@@ -75,6 +76,12 @@ object Job extends TemplateJob {
         .setParallelism(consumerParallelism)
         .rescale
 
+    val jsonStream = StreamJoinFlow.joinStream(
+      accountStream,
+      loanStream,
+      configHelper
+    )
+    
 
 
 

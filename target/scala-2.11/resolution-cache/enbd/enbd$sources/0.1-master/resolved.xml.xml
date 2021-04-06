@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ivy-module version="2.0" xmlns:e="http://ant.apache.org/ivy/extra">
+	<info organisation="enbd"
+		module="enbd$sources"
+		revision="0.1-master"
+		status="integration"
+		publication="20210404125338"
+	/>
+	<configurations>
+		<conf name="compile" visibility="public" description=""/>
+		<conf name="runtime" visibility="public" description="" extends="compile"/>
+		<conf name="test" visibility="public" description="" extends="runtime"/>
+		<conf name="provided" visibility="public" description=""/>
+		<conf name="optional" visibility="public" description=""/>
+		<conf name="compile-internal" visibility="private" description="" extends="compile,optional,provided"/>
+		<conf name="runtime-internal" visibility="private" description="" extends="runtime,optional"/>
+		<conf name="test-internal" visibility="private" description="" extends="test,optional,provided"/>
+		<conf name="plugin" visibility="private" description=""/>
+		<conf name="pom" visibility="public" description=""/>
+		<conf name="scala-tool" visibility="private" description=""/>
+	</configurations>
+	<publications>
+	</publications>
+	<dependencies>
+		<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.11.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master">
+			<artifact name="log4j-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="commons-collections" name="commons-collections" rev="3.2.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-collections" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-compress" rev="1.20" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-compress" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-native_2.11" rev="3.6.2" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="json4s-native_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-connector-kafka-0.10_2.11" rev="1.11.3" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-connector-kafka-0.10_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="commons-cli" name="commons-cli" rev="1.3.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-cli" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-actor_2.11" rev="2.5.21" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://doc.akka.io/api/akka/2.5.21">
+			<artifact name="akka-actor_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.mapdb" name="mapdb" rev="3.0.8" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="mapdb" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.thoughtworks.paranamer" name="paranamer" rev="2.8" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="paranamer" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.slf4j" name="slf4j-simple" rev="1.7.21" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="slf4j-simple" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-lang3" rev="3.3.2" transitive="false" conf="provided->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-lang3" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe" name="ssl-config-core_2.11" rev="0.3.7" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="ssl-config-core_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.javassist" name="javassist" rev="3.24.0-GA" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="javassist" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-java8-compat_2.11" rev="0.7.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-java8-compat_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="jakarta.annotation" name="jakarta.annotation-api" rev="1.3.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jakarta.annotation-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-java" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-avro" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-avro" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.7" transitive="false" conf="provided->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="slf4j-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-core_2.11" rev="3.6.2" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;compile-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master">
+			<artifact name="json4s-core_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="nl.basjes.collections" name="prefixmap" rev="2.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="prefixmap" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-scalap_2.11" rev="3.6.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-scalap_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.wnameless.json" name="json-flattener" rev="0.7.1" transitive="false" conf="compile->default,compile,runtime,master;runtime->default,compile,runtime,master;test->default,compile,runtime,master;compile-internal->default,compile,runtime,master;runtime-internal->default,compile,runtime,master;test-internal->default,compile,runtime,master">
+			<artifact name="json-flattener" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="commons-io" name="commons-io" rev="2.7" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-io" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.redislabs" name="jrebloom" rev="2.0.0-m2" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="jrebloom" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.spatial4j" name="spatial4j" rev="0.5" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="spatial4j" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-parser-combinators_2.11" rev="1.0.4" transitive="false" conf="scala-tool->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-parser-combinators_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-runtime-web_2.11" rev="1.12.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="flink-runtime-web_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-runtime_2.11" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-runtime_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.wnameless.json" name="json-base" rev="1.0.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json-base" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.eclipsesource.minimal-json" name="minimal-json" rev="0.9.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="minimal-json" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.wnameless" name="json-flattener" rev="0.7.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="json-flattener" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-collections4" rev="4.4" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-collections4" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.reactivestreams" name="reactive-streams" rev="1.0.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="reactive-streams" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-parser-combinators_2.11" rev="1.1.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-parser-combinators_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-reflect" rev="2.11.12" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master;scala-tool->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.11.12/">
+			<artifact name="scala-reflect" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="nl.basjes.parse.useragent" name="yauaa" rev="5.22" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="yauaa" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.6" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalactic" name="scalactic_2.11" rev="3.0.5" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scalactic_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.jetbrains.kotlin" name="kotlin-stdlib" rev="1.2.71" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="kotlin-stdlib" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-annotations" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-annotations" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-test-utils-junit" rev="1.12.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-test-utils-junit" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="net.jpountz.lz4" name="lz4" rev="1.3.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="lz4" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="log4j" name="log4j" rev="1.2.17" transitive="false" conf="provided->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="log4j" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-core" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.curator" name="curator-test" rev="2.12.0" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="curator-test" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.logging.log4j" name="log4j-core" rev="2.12.1" transitive="false" conf="test->default,compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default,default(compile)">
+			<artifact name="log4j-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.netty" name="netty" rev="3.7.0.Final" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="netty" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-annotations" rev="2.11.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jackson-annotations" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.jetbrains" name="annotations" rev="13.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="annotations" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="jline" name="jline" rev="0.9.94" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jline" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.collections" name="eclipse-collections" rev="7.0.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="eclipse-collections" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.swagger" name="swagger-annotations" rev="1.6.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="swagger-annotations" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-avro-confluent-registry" rev="1.12.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="flink-avro-confluent-registry" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.httpcomponents.core5" name="httpcore5" rev="5.0.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="httpcore5" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.slf4j" name="slf4j-log4j12" rev="1.7.7" transitive="false" conf="provided->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="slf4j-log4j12" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.lz4" name="lz4-java" rev="1.6.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="lz4-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.logging.log4j" name="log4j-api" rev="2.11.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master">
+			<artifact name="log4j-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.glassfish.jersey.core" name="jersey-common" rev="2.30" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jersey-common" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-file-sink-common" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-file-sink-common" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.google.guava" name="guava" rev="15.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="guava" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang.modules" name="scala-xml_2.11" rev="1.0.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;scala-tool->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scala-xml_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.slf4j" name="slf4j-api" rev="1.7.30" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);test->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile)">
+			<artifact name="slf4j-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-clients_2.11" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-clients_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-test-utils_2.11" rev="1.12.1" transitive="false" conf="test->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="flink-test-utils_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-ast_2.11" rev="3.6.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="json4s-ast_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.avro" name="avro" rev="1.10.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);runtime->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);test->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default(compile)">
+			<artifact name="avro" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-core" rev="2.11.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jackson-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="log4j" name="log4j" rev="1.2.16" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="log4j" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-stream_2.11" rev="2.5.21" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://doc.akka.io/api/akka/2.5.21">
+			<artifact name="akka-stream_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.clapper" name="grizzled-slf4j_2.11" rev="1.3.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="grizzled-slf4j_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-library" rev="2.11.12" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;compile-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;scala-tool->default,compile,runtime(*),master(compile),runtime,optional,optional(default),compile(*),master" info.apiURL="http://www.scala-lang.org/api/2.11.12/">
+			<artifact name="scala-library" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-lang3" rev="3.11" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-lang3" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.fasterxml.jackson.core" name="jackson-databind" rev="2.11.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jackson-databind" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.data-artisans" name="frocksdbjni" rev="5.17.2-artisans-2.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="frocksdbjni" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.glassfish.hk2.external" name="jakarta.inject" rev="2.6.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jakarta.inject" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.softwaremill.sttp" name="core_2.11" rev="1.7.2" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="core_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.httpcomponents.client5" name="httpclient5" rev="5.0.3" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="httpclient5" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.twitter" name="chill_2.11" rev="0.7.6" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="chill_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-pool2" rev="2.6.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-pool2" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scala-lang" name="scala-compiler" rev="2.11.12" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master;scala-tool->default,compile,runtime,optional,optional(default),master">
+			<artifact name="scala-compiler" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-connector-kafka-base_2.11" rev="1.11.3" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-connector-kafka-base_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-text" rev="1.9" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-text" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.commons" name="commons-math3" rev="3.5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-math3" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-streaming-java_2.11" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-streaming-java_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-protobuf_2.11" rev="2.5.21" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://doc.akka.io/api/akka/2.5.21">
+			<artifact name="akka-protobuf_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe" name="config" rev="1.3.3" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="config" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.twitter" name="chill-java" rev="0.7.6" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="chill-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.collections" name="eclipse-collections-forkjoin" rev="7.0.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="eclipse-collections-forkjoin" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-scala_2.11" rev="1.12.1" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;compile-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master">
+			<artifact name="flink-scala_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.jetbrains.kotlin" name="kotlin-stdlib-common" rev="1.2.71" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="kotlin-stdlib-common" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.xerial.snappy" name="snappy-java" rev="1.1.4" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="snappy-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="junit" name="junit" rev="4.12" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="junit" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.logging.log4j" name="log4j-api" rev="2.12.1" transitive="false" conf="test->default,compile,runtime(*),master(compile),runtime,compile(*),master,default(compile);test-internal->compile,runtime(*),master(compile),runtime,compile(*),master,default,default(compile)">
+			<artifact name="log4j-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="redis.clients" name="jedis" rev="3.3.0" transitive="false" conf="compile->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);runtime->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);test->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);compile-internal->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);runtime-internal->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*);test-internal->default,compile,runtime,default(compile),master,runtime(*),master(compile),compile(*)">
+			<artifact name="jedis" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.github.openfeign" name="feign-core" rev="11.0" transitive="false" conf="compile->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;compile-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;runtime-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master;test-internal->default,compile,runtime(*),master(compile),runtime,default(compile),compile(*),master">
+			<artifact name="feign-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-hadoop-fs" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-hadoop-fs" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.hamcrest" name="hamcrest-core" rev="1.3" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="hamcrest-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.scalatest" name="scalatest_2.11" rev="3.0.5" transitive="false" conf="test->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="scalatest_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.github.scopt" name="scopt_2.11" rev="3.5.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="scopt_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.json4s" name="json4s-jackson_2.11" rev="3.6.2" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="json4s-jackson_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.httpcomponents.core5" name="httpcore5-h2" rev="5.0.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="httpcore5-h2" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.maxmind.db" name="maxmind-db" rev="1.4.0" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="maxmind-db" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-optimizer_2.11" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-optimizer_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.objenesis" name="objenesis" rev="2.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="objenesis" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-streaming-scala_2.11" rev="1.12.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="flink-streaming-scala_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.mapdb" name="elsa" rev="3.0.0-M5" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="elsa" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.google.code.gson" name="gson" rev="2.8.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="gson" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.zookeeper" name="zookeeper" rev="3.4.8" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="zookeeper" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-metrics-core" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-metrics-core" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-connector-kafka-0.11_2.11" rev="1.11.3" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="flink-connector-kafka-0.11_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.glassfish.hk2" name="osgi-resource-locator" rev="1.0.3" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="osgi-resource-locator" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="jline" name="jline" rev="2.14.3" transitive="false" conf="scala-tool->compile,master(compile),compile(*),master">
+			<artifact name="jline" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-statebackend-rocksdb_2.11" rev="1.12.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="flink-statebackend-rocksdb_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.typesafe.akka" name="akka-slf4j_2.11" rev="2.5.21" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master" info.apiURL="http://doc.akka.io/api/akka/2.5.21">
+			<artifact name="akka-slf4j_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="jakarta.ws.rs" name="jakarta.ws.rs-api" rev="2.1.6" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="jakarta.ws.rs-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.eclipse.collections" name="eclipse-collections-api" rev="7.0.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="eclipse-collections-api" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="commons-codec" name="commons-codec" rev="1.13" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="commons-codec" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-s3-fs-hadoop" rev="1.12.1" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="flink-s3-fs-hadoop" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-queryable-state-client-java" rev="1.12.1" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="flink-queryable-state-client-java" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.logging.log4j" name="log4j-slf4j-impl" rev="2.12.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="log4j-slf4j-impl" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.esotericsoftware.kryo" name="kryo" rev="2.24.0" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="kryo" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.esotericsoftware.minlog" name="minlog" rev="1.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="minlog" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="com.google.guava" name="guava" rev="16.0.1" transitive="false" conf="test->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="guava" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="io.github.openfeign" name="feign-jackson" rev="11.0" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="feign-jackson" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.kafka" name="kafka-clients" rev="0.11.0.2" transitive="false" conf="compile->compile,runtime(*),master(compile),runtime,compile(*),master;runtime->compile,runtime(*),master(compile),runtime,compile(*),master;test->compile,runtime(*),master(compile),runtime,compile(*),master;compile-internal->compile,runtime(*),master(compile),runtime,compile(*),master;runtime-internal->compile,runtime(*),master(compile),runtime,compile(*),master;test-internal->compile,runtime(*),master(compile),runtime,compile(*),master">
+			<artifact name="kafka-clients" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+		<dependency org="org.apache.flink" name="flink-connector-filesystem_2.11" rev="1.11.3" transitive="false" conf="compile->default,compile,runtime,default(compile),master;runtime->default,compile,runtime,default(compile),master;test->default,compile,runtime,default(compile),master;compile-internal->default,compile,runtime,default(compile),master;runtime-internal->default,compile,runtime,default(compile),master;test-internal->default,compile,runtime,default(compile),master">
+			<artifact name="flink-connector-filesystem_2.11" type="src" ext="jar" conf="*" e:classifier="sources"/>
+			<include name="*" type="*" ext="*" conf="" matcher="exact"/>
+		</dependency>
+	</dependencies>
+</ivy-module>

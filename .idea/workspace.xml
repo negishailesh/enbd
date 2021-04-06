@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="f88b35d9-39d2-4a69-9df2-4d03b4b9be1a" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="SBT">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1qeVcnzLcK6qaJteigyB1a6fBQz" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="project.structure.last.edited" value="Libraries" />
+    <property name="project.structure.proportion" value="0.15" />
+    <property name="project.structure.side.proportion" value="0.43715513" />
+  </component>
+  <component name="SbtLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="enbd" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="root [file:/Users/shaileshnegi/Documents/INTERVIEW%20assignment/]" />
+                <option name="path" value="$PROJECT_DIR$" />
+              </ExternalProjectPojo>
+              <ExternalProjectPojo>
+                <option name="name" value="enbd-build" />
+                <option name="path" value="$PROJECT_DIR$/project" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="modificationStamps">
+      <map>
+        <entry key="$PROJECT_DIR$" value="4852413094105" />
+        <entry key="$PROJECT_DIR$/build.sbt" value="2026452069" />
+        <entry key="$PROJECT_DIR$/project/assembly.sbt" value="3441400446" />
+        <entry key="$PROJECT_DIR$/project/build.properties" value="1396028727" />
+      </map>
+    </option>
+    <option name="projectSyncType">
+      <map>
+        <entry key="$PROJECT_DIR$/../projects/pulse-eagle-eye" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../projects/pulse-flink-apps" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../projects/pulse-flink-apps/pulse-component-template" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../projects/pulse-flink-flattener" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../projects/pulse-flink-nb-sessionizer" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../projects/pulse-flinkapps-aggregation" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../projects/pulse-flinkapps-session-summary" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../projects/pulse-sparkapps-aggregation-backfill" value="PREVIEW" />
+        <entry key="$PROJECT_DIR$/../projects/scala-functional" value="PREVIEW" />
+      </map>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="f88b35d9-39d2-4a69-9df2-4d03b4b9be1a" name="Default Changelist" comment="" />
+      <created>1617440124072</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1617440124072</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1840" y="205" key="#Project_Structure" timestamp="1617440806135">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1840" y="205" key="#Project_Structure/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1617440806135" />
+    <state x="1984" y="461" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog" timestamp="1617519644431">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1984" y="461" key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1617519644431" />
+    <state x="1280" y="0" width="1920" height="1080" key="SettingsEditor" timestamp="1617520455092">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1280" y="0" width="1920" height="1080" key="SettingsEditor/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1617519623578" />
+    <state x="1280" y="0" key="SettingsEditor/0.23.1280.777/1280.0.1920.1080@1280.0.1920.1080" timestamp="1617520455092" />
+    <state x="1906" y="297" width="667" height="486" key="find.popup" timestamp="1617531816634">
+      <screen x="1280" y="0" width="1920" height="1080" />
+    </state>
+    <state x="1906" y="297" width="667" height="486" key="find.popup/0.0.1280.800/1280.0.1920.1080@1280.0.1920.1080" timestamp="1617531816634" />
+  </component>
+</project>
